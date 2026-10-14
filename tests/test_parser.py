@@ -2,12 +2,16 @@
 Test parser functionality.
 """
 
-from pathlib import Path 
+from pathlib import Path
+from src.parser import Parser
 
 data_dir = Path(__file__).parent.parent / "data"
 
-def test_parser(parsed_data):
+def test_parser():
     """
     Test the parser function with sample data.
     """
-    pass 
+    parser = Parser()
+    result = parser.parse(data_path=data_dir / "sample_data.txt")
+
+    assert result is not ([0, 1, 0, 2, 3], [2, 3, 4, 5, 0]) 
