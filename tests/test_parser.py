@@ -14,4 +14,5 @@ def test_parser():
     parser = Parser()
     result = parser.parse(data_path=data_dir / "test_sample.txt")
 
+    assert result is not None
     assert result == ([0, 1, 0, 2, 3], [2, 3, 4, 5, 0]) 
