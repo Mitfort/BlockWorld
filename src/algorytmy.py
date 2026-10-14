@@ -1,0 +1,73 @@
+#algorytmy.py
+import time
+from stan import StanKlockow
+def dfs(
+        stanStartowy: StanKlockow, stanDocelowy: StanKlockow, limit_wezlow: int = 10000, limit_czasu: float= 1000
+):
+    czas_start=time.time()
+
+    stos = [(stanStartowy, [])]
+
+    odwiezone=set()
+
+    rozwiniete_wezly = 0
+    while stos:
+        czas_aktualny = time.time() - czas_start
+
+        if czas_aktualny > limit_czasu:
+            print("przekroczono czas oczekiwania")
+            return None, rozwiniete_wezly, czas_aktualny, False
+        if rozwiniete_wezly >= limit_wezlow:
+            print("Przekroczono limit rozwiniętych węzłów")
+            return None, rozwiniete_wezly, czas_aktualny, False
+        stan_aktualny, sciezka = stos.pop()
+        klucz = tuple(stan_aktualny.podloza)
+
+        if klucz in odwiezone:
+            continue
+
+        odwiezone.add(klucz)
+        rozwiniete_wezly +=1
+
+        if stan_aktualny.podloza == stanDocelowy.podloza:
+            return sciezka, rozwiniete_wezly, czas_aktualny, True
+
+        ruchy=stan_aktualny.generuj_ruchy()
+
+
+        for ruch in reversed(ruchy):
+            nastepny_stan = stan_aktualny.wykonajRuch(ruch)
+            if tuple(nastepny_stan.podloza) not in odwiezone:
+                stos.append((nastepny_stan, sciezka + [ruch]))
+    czas_aktualny = time.time() - czas_start
+    return None, rozwiniete_wezly, czas_aktualny, False
+
+
+def weryfikuj_sekwencje(stan_startowy: StanKlockow, stan_docelowy: StanKlockow, sekwencja_ruchow: list[tuple[int, int]],) -> tuple[bool, str]:
+    aktualny_stan = StanKlockow(list(stan_startowy.podloza))
+
+    for v, ruch in enumerate(sekwencja_ruchow, start=1):
+        klocek, cel = ruch
+        wolne = aktualny_stan.wolneKlocki()
+
+        if klocek not in wolne:
+            return False, f"Ruch nr {v} {ruch}: Klocek {klocek} nie jest wolny!"
+
+        if cel != 0 and cel not in wolne:
+            return False, f"Ruch nr {v} {ruch}: Klocek {cel} nie jest wolny!"
+
+        if cel == klocek:
+            return (
+                False,
+                f"Ruch nr {v} {ruch}: Proba polozenia klocka na samym sobie!",
+            )
+
+        aktualny_stan = aktualny_stan.wykonajRuch(ruch)
+
+    if aktualny_stan.podloza == stan_docelowy.podloza:
+        return True, f"Sekwencja poprawna ({len(sekwencja_ruchow)} ruchów)"
+    else:
+        return (
+            False,
+            f"Sekwencja zakończona, ale układ końcowy {aktualny_stan.podloza} różni się od docelowego {stan_docelowy.podloza}!",
+        )
