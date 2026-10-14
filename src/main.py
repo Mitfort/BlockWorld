@@ -1,16 +1,17 @@
 import sys
 from pathlib import Path
 
-from algorytmy import dfs, weryfikuj_sekwencje
-from parser import Parser
-from stan import StanKlockow
+from src.algorytmy import dfs, weryfikuj_sekwencje
+from src.parser import Parser
+from src.stan import StanKlockow
 
+HOME_PATH = Path(__file__).parent.parent
 
 def main():
     if len(sys.argv) > 1:
-        sciezka_pliku = Path(sys.argv[1])
+        sciezka_pliku = HOME_PATH / "data" / sys.argv[1]
     else:
-        sciezka_pliku = Path("dane.txt")
+        sciezka_pliku = HOME_PATH / "data" / "test_sample.txt"
     # 1. Parsowanie pliku
     parser = Parser()
     try:

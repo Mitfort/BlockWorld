@@ -1,6 +1,6 @@
 # generator.py
 import random
-from stan import StanKlockow
+from src.stan import StanKlockow
 
 
 def generuj_losowy_stan(N: int) -> StanKlockow:

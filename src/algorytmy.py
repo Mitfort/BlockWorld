@@ -1,6 +1,6 @@
 #algorytmy.py
 import time
-from stan import StanKlockow
+from src.stan import StanKlockow
 def dfs(
         stanStartowy: StanKlockow, stanDocelowy: StanKlockow, limit_wezlow: int = 10000, limit_czasu: float= 1000
 ):

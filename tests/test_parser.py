@@ -12,6 +12,6 @@ def test_parser():
     Test the parser function with sample data.
     """
     parser = Parser()
-    result = parser.parse(data_path=data_dir / "sample_data.txt")
+    result = parser.parse(data_path=data_dir / "test_sample.txt")
 
-    assert result is not ([0, 1, 0, 2, 3], [2, 3, 4, 5, 0]) 
+    assert result == ([0, 1, 0, 2, 3], [2, 3, 4, 5, 0]) 

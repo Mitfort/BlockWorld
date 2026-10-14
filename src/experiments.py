@@ -1,7 +1,7 @@
 # experiments.py
 import random
-from algorytmy import dfs, weryfikuj_sekwencje
-from generator import generuj_losowy_stan
+from src.algorytmy import dfs, weryfikuj_sekwencje
+from src.generator import generuj_losowy_stan
 
 
 def przeprowadz_badania():
