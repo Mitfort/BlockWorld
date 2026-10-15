@@ -14,7 +14,7 @@ def przeprowadz_badania():
     for N in range(3, 16):
         print(f"\n--- TESTY DLA N = {N} ---")
 
-        for i in range(1, 6):  # 5 problemów dla każdego N[cite: 2]
+        for i in range(1, 6):  # 5 problemów dla każdego N
             start = generuj_losowy_stan(N)
             cel = generuj_losowy_stan(N)
 

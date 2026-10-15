@@ -4,7 +4,6 @@ from src.stan import StanKlockow
 
 
 def generuj_losowy_stan(N: int) -> StanKlockow:
-    """Generuje poprawny, losowy stan dla N klocków[cite: 2, 3]."""
     klocki = list(range(1, N + 1))
     random.shuffle(klocki)
 
