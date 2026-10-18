@@ -51,12 +51,12 @@ def main():
     print("✓ Układy wejściowe są poprawne.\n")
 
     # 4. Pr przeszukanie przestrzeni stanów (DFS)
-    sekwencja, wezly, czas, sukces = dfs(
+    sekwencja, wezly, czas, sukces, _ = dfs(
         start, cel, limit_wezlow=50000, limit_czasu=10.0
     )
 
     # 5. Prezentacja wyników i weryfikacja
-    if sukces:
+    if sukces and sekwencja is not None:
         print(f" SUKCES ")
         print(f"  Długość sekwencji: {len(sekwencja)} ruchów")
         print(f"  Rozwinięte węzły: {wezly}")
@@ -76,11 +76,11 @@ def main():
 
     ### BFS ### 
 
-    sekwencja_bfs, wezly_bfs, czas_bfs, sukces_bfs = bfs(
+    sekwencja_bfs, wezly_bfs, czas_bfs, sukces_bfs, _ = bfs(
         start, cel, limit_wezlow=50000, limit_czasu=10.0
     )
 
-    if sukces_bfs:
+    if sukces_bfs and sekwencja_bfs is not None:
         print(f"\n SUKCES (BFS) ")
         print(f"  Długość sekwencji: {len(sekwencja_bfs)} ruchów")
         print(f"  Rozwinięte węzły: {wezly_bfs}")
