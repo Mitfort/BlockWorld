@@ -9,14 +9,20 @@ from src.algorytmy import (
 
 from src.parser import Parser
 from src.stan import StanKlockow
+from src.warianty import Warianty
 
 HOME_PATH = Path(__file__).parent.parent
+WARIANT = Warianty.ROZSZERZONY
 
 def main():
     if len(sys.argv) > 1:
         sciezka_pliku = HOME_PATH / "data" / sys.argv[1]
+        wariant_value = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+        wariant = Warianty(wariant_value)
     else:
         sciezka_pliku = HOME_PATH / "data" / "test_sample.txt"
+        wariant = WARIANT
+
     # 1. Parsowanie pliku
     parser = Parser()
     try:
@@ -28,8 +34,8 @@ def main():
         return
 
     # 2. Tworzenie obiektów StanKlockow
-    start = StanKlockow(start_dane)
-    cel = StanKlockow(cel_dane)
+    start = StanKlockow(start_dane, wariant)
+    cel = StanKlockow(cel_dane, wariant)
 
     # 3. Walidacja układów wejściowych
     ok_start, msg_start = start.funkcjaWalidacyjna()

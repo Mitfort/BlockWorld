@@ -1,9 +1,11 @@
 #stan.py
+from src.warianty import Warianty
+
 class StanKlockow:
-    def __init__(self, podloza: list [int]):
+    def __init__(self, podloza: list [int], wariant: Warianty = Warianty.PODSTAWOWY):
         self.podloza = podloza
         self.N=len(podloza)
-    
+        self.wariant = wariant
     
     def funkcjaWalidacyjna(self) -> tuple[bool, str]:
         #sprawdzamy, czy v nie jest na nieistniejącym bloczku
@@ -51,16 +53,29 @@ class StanKlockow:
 
     def generuj_ruchy(self) ->list[tuple[int,int]]:
         wolne = self.wolneKlocki()
-        ruchy=[]
+        ruchy: list[tuple[int,int]] = []
 
         for v in wolne:
             obecne_podloze = self.podloza[v-1]
+
+            # Wolny klocek można odłożyć na stół (0)
             if obecne_podloze != 0:
                 ruchy.append((v,0))
-            elif obecne_podloze == 0:
+
+            if self.wariant == Warianty.PODSTAWOWY:
+                # Możemy przenieść klocek tylko ze stołu
+                # na inny wolny klocek 
+                if obecne_podloze == 0:
+                    for cel in wolne:
+                        if cel != v:
+                            ruchy.append((v,cel))
+
+            elif self.wariant == Warianty.ROZSZERZONY:
+                # Możemy przenieść klocek na inny klocek
                 for cel in wolne:
                     if cel != v:
                         ruchy.append((v,cel))
+            
         return ruchy
 
     def wykonajRuch(self, ruch: tuple[int,int]) -> "StanKlockow":
@@ -70,4 +85,4 @@ class StanKlockow:
 
         nowe_podloze[v - 1] = cel
 
-        return StanKlockow(nowe_podloze)
+        return StanKlockow(nowe_podloze, self.wariant)
