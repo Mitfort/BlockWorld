@@ -1,7 +1,12 @@
 import sys
 from pathlib import Path
 
-from src.algorytmy import dfs, weryfikuj_sekwencje
+from src.algorytmy import (
+    dfs, 
+    bfs,
+    weryfikuj_sekwencje,
+)
+
 from src.parser import Parser
 from src.stan import StanKlockow
 
@@ -61,6 +66,31 @@ def main():
             print(f"  Status: X {msg_wer}")
     else:
         print("X Nie udało się znaleźć rozwiązania w podanych limitach.")
+
+
+    ### BFS ### 
+
+    sekwencja_bfs, wezly_bfs, czas_bfs, sukces_bfs = bfs(
+        start, cel, limit_wezlow=50000, limit_czasu=10.0
+    )
+
+    if sukces_bfs:
+        print(f"\n SUKCES (BFS) ")
+        print(f"  Długość sekwencji: {len(sekwencja_bfs)} ruchów")
+        print(f"  Rozwinięte węzły: {wezly_bfs}")
+        print(f"  Czas wykonania:    {czas_bfs:.4f} s")
+        print(f"  Sekwencja ruchów:  {sekwencja_bfs}\n")
+
+        # Procedura weryfikująca
+        ok_wer_bfs, msg_wer_bfs = weryfikuj_sekwencje(start, cel, sekwencja_bfs)
+        print(f" WERYFIKACJA SEKWENCJI (BFS) ")
+        if ok_wer_bfs:
+            print(f"  Status: ✓ {msg_wer_bfs}")
+        else:
+            print(f"  Status: X {msg_wer_bfs}")
+    else:
+        print("X Nie udało się znaleźć rozwiązania w podanych limitach (BFS).")
+
 
 if __name__ == "__main__":
     main()
