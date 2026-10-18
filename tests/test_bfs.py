@@ -25,7 +25,7 @@ def test_bfs_simple():
     cel = StanKlockow(cel_dane, wariant=Warianty.PODSTAWOWY)
 
     # Run BFS
-    sekwencja, wezly, czas, sukces = bfs(
+    sekwencja, wezly, czas, sukces, _ = bfs(
         start, cel, limit_wezlow=50000, limit_czasu=10.0
     )
 
@@ -50,7 +50,7 @@ def test_bfs_extended():
     cel = StanKlockow(cel_dane, wariant=Warianty.ROZSZERZONY)
 
     # Run BFS
-    sekwencja, wezly, czas, sukces = bfs(
+    sekwencja, wezly, czas, sukces, _ = bfs(
         start, cel, limit_wezlow=50000, limit_czasu=10.0
     )
 
