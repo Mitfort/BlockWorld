@@ -43,6 +43,67 @@ def dfs(
     return None, rozwiniete_wezly, czas_aktualny, False
 
 
+# BFS =======
+def bfs(stanStartowy: StanKlockow, stanDocelowy: StanKlockow, limit_wezlow: int = 10000, limit_czasu: float = 1000) -> tuple[list[tuple[int, int]] | None, int, float, bool]:
+    """
+    Implementacja algorytmu BFS
+    Returns: 
+        sekwencja_ruchow: list[tuple[int, int]] | None: Sekwencja ruchów prowadząca do rozwiązania lub None, jeśli nie znaleziono rozwiązania.
+        rozwiniete_wezly: int: Liczba rozwiniętych węzłów podczas przeszukiwania.
+        czas_aktualny: float: Czas wykonania algorytmu w sekundach.
+        sukces: bool: True, jeśli znaleziono rozwiązanie, False w przeciwnym razie.
+    """
+
+    from collections import deque 
+
+    czas_start = time.time()
+
+    q = deque([(stanStartowy, [])])
+    visited = set()
+    rozwiniete_wezly = 0
+
+    while q: 
+
+        czas_aktualny = time.time() - czas_start
+
+        if czas_aktualny > limit_czasu:
+            print("przekroczono czas oczekiwania")
+            return None, rozwiniete_wezly, czas_aktualny, False
+
+        if rozwiniete_wezly >= limit_wezlow:
+            print("Przekroczono limit rozwiniętych węzłów")
+            return None, rozwiniete_wezly, czas_aktualny, False
+
+        # Pobieramy pierwszy element z kolejki
+        stan_aktualny, sciezka = q.popleft()
+        # Tworzymy klucz reprezentujący aktualny stan
+        klucz = tuple(stan_aktualny.podloza)
+
+        if klucz in visited:
+            continue
+
+        visited.add(klucz)  
+        rozwiniete_wezly += 1
+
+        # Sprawdzamy, czy osiągnęliśmy stan docelowy
+        if stan_aktualny.podloza == stanDocelowy.podloza:
+            return sciezka, rozwiniete_wezly, czas_aktualny, True
+
+
+        # Generujemy możliwe ruchy z aktualnego stanu
+        ruchy = stan_aktualny.generuj_ruchy()
+
+        for ruch in ruchy: # Dla każdego możliwego ruchu generujemy następny stan i dodajemy go do kolejki
+            nastepny_stan = stan_aktualny.wykonajRuch(ruch)
+            if tuple(nastepny_stan.podloza) not in visited:
+                q.append((nastepny_stan, sciezka + [ruch]))
+
+    # Nie znaleźliśmy rozwiązania 
+    czas_aktualny = time.time() - czas_start
+    return None, rozwiniete_wezly, czas_aktualny, False
+
+#=====
+
 def weryfikuj_sekwencje(stan_startowy: StanKlockow, stan_docelowy: StanKlockow, sekwencja_ruchow: list[tuple[int, int]],) -> tuple[bool, str]:
     aktualny_stan = StanKlockow(list(stan_startowy.podloza))
 
