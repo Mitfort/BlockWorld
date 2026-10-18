@@ -59,6 +59,10 @@ def porownaj_algorytmy(wariant: Warianty, ziarna:list[int], N:int):
     
     Limit_wezlow = 30000
     Limit_czasu = 10.0 
+    average_results = {
+        "DFS": {"success": 0, "total_time": 0.0, "total_nodes": 0, "total_memory": 0, "solutions": 0},
+        "BFS": {"success": 0, "total_time": 0.0, "total_nodes": 0, "total_memory": 0, "solutions": 0}
+    }
 
     for ziarno in ziarna:
         random.seed(ziarno)
@@ -76,6 +80,12 @@ def porownaj_algorytmy(wariant: Warianty, ziarna:list[int], N:int):
         print(f"\nZiarno: {ziarno}, N: {N}")
         print(f"== DFS ==")
         if sukces_dfs and seq_dfs is not None:
+            average_results["DFS"]["success"] += 1
+            average_results["DFS"]["total_time"] += czas_dfs
+            average_results["DFS"]["total_nodes"] += wezly_dfs
+            average_results["DFS"]["total_memory"] += maksymalna_liczba_stanow_w_pamieci_dfs
+            average_results["DFS"]["solutions"] += len(seq_dfs)
+
             print(f"  Sukces: TAK")
             print(f"  Długość sekwencji: {len(seq_dfs)}")
             print(f"  Rozwinięte węzły: {wezly_dfs}")
@@ -86,6 +96,12 @@ def porownaj_algorytmy(wariant: Warianty, ziarna:list[int], N:int):
 
         print(f"\n== BFS ==")
         if sukces_bfs and seq_bfs is not None:
+            average_results["BFS"]["success"] += 1
+            average_results["BFS"]["total_time"] += czas_bfs
+            average_results["BFS"]["total_nodes"] += wezly_bfs
+            average_results["BFS"]["total_memory"] += maksymalna_liczba_stanow_w_pamieci_bfs
+            average_results["BFS"]["solutions"] += len(seq_bfs)
+        
             print(f"  Sukces: TAK")
             print(f"  Długość sekwencji: {len(seq_bfs)}")
             print(f"  Rozwinięte węzły: {wezly_bfs}")
@@ -93,6 +109,34 @@ def porownaj_algorytmy(wariant: Warianty, ziarna:list[int], N:int):
             print(f"  Maksymalna liczba stanów w pamięci: {maksymalna_liczba_stanow_w_pamieci_bfs}")
         else:
             print(f"  Sukces: NIE (Przekroczono limit)")
+
+    print(f"\n=== Średnie wyniki ===")
+    for algorytm in average_results:
+        if average_results[algorytm]["success"] > 0:
+            print(f"\n{algorytm}:")
+            print(f"  Średni czas: {average_results[algorytm]['total_time'] / average_results[algorytm]['success']:.4f} s")
+            print(f"  Średnia liczba węzłów: {average_results[algorytm]['total_nodes'] / average_results[algorytm]['success']}")
+            print(f"  Średnia liczba stanów w pamięci: {average_results[algorytm]['total_memory'] / average_results[algorytm]['success']}")
+            print(f"  Średnia długość sekwencji: {average_results[algorytm]['solutions'] / average_results[algorytm]['success']}")
+        else:
+            print(f"\n{algorytm}: Brak sukcesów (przekroczono limity)")
+
+    output_file = RESULTS_DIR / f"porownanie_algorytmow_N{N}.txt"
+
+    with open(output_file, "w") as f:
+        f.write(f"Porównanie algorytmów DFS i BFS dla N={N}\n")
+        f.write(f"Ziarna: {ziarna}\n")
+        f.write(f"Limit węzłów: {Limit_wezlow}, Limit czasu: {Limit_czasu} s\n\n")
+
+        for algorytm in average_results:
+            if average_results[algorytm]["success"] > 0:
+                f.write(f"{algorytm}:\n")
+                f.write(f"  Średni czas: {average_results[algorytm]['total_time'] / average_results[algorytm]['success']:.4f} s\n")
+                f.write(f"  Średnia liczba węzłów: {average_results[algorytm]['total_nodes'] / average_results[algorytm]['success']}\n")
+                f.write(f"  Średnia liczba stanów w pamięci: {average_results[algorytm]['total_memory'] / average_results[algorytm]['success']}\n")
+                f.write(f"  Średnia długość sekwencji: {average_results[algorytm]['solutions'] / average_results[algorytm]['success']}\n\n")
+            else:
+                f.write(f"{algorytm}: Brak sukcesów (przekroczono limity)\n\n")
 
 
 if __name__ == "__main__":
