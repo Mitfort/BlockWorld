@@ -1,9 +1,10 @@
 # generator.py
 import random
 from src.stan import StanKlockow
+from src.warianty import Warianty
 
-
-def generuj_losowy_stan(N: int) -> StanKlockow:
+def generuj_losowy_stan(N: int, wariant: Warianty = Warianty.PODSTAWOWY) -> StanKlockow:
+    """Generuje poprawny, losowy stan dla N klocków[cite: 2, 3]."""
     klocki = list(range(1, N + 1))
     random.shuffle(klocki)
 
@@ -24,4 +25,4 @@ def generuj_losowy_stan(N: int) -> StanKlockow:
         for i in range(1, len(wieza)):
             podloza[wieza[i] - 1] = wieza[i - 1]
 
-    return StanKlockow(podloza)
+    return StanKlockow(podloza, wariant)
