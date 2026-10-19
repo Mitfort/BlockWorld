@@ -4,6 +4,7 @@ from pathlib import Path
 from src.algorytmy import (
     dfs, 
     bfs,
+    ida_star,
     weryfikuj_sekwencje,
 )
 
@@ -96,6 +97,29 @@ def main():
             print(f"  Status: X {msg_wer_bfs}")
     else:
         print("X Nie udało się znaleźć rozwiązania w podanych limitach (BFS).")
+
+    ### IDA* ###
+
+    sekwencja_ida, wezly_ida, czas_ida, sukces_ida, pamiec_ida = ida_star(
+        start, cel, limit_wezlow=50000, limit_czasu=10.0
+    )
+
+    if sukces_ida and sekwencja_ida is not None:
+        print("\n SUKCES (IDA*) ")
+        print(f"  Długość sekwencji: {len(sekwencja_ida)} ruchów")
+        print(f"  Rozwinięte węzły: {wezly_ida}")
+        print(f"  Czas wykonania:    {czas_ida:.4f} s")
+        print(f"  Maksymalna liczba stanów na ścieżce: {pamiec_ida}")
+        print(f"  Sekwencja ruchów:  {sekwencja_ida}\n")
+
+        ok_wer_ida, msg_wer_ida = weryfikuj_sekwencje(start, cel, sekwencja_ida)
+        print(" WERYFIKACJA SEKWENCJI (IDA*) ")
+        if ok_wer_ida:
+            print(f"  Status: ✓ {msg_wer_ida}")
+        else:
+            print(f"  Status: X {msg_wer_ida}")
+    else:
+        print("X Nie udało się znaleźć rozwiązania w podanych limitach (IDA*).")
 
 
 if __name__ == "__main__":
