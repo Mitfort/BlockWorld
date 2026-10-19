@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Porównanie heurystyk IDA*</title>
+<style>
+:root { color-scheme: light; --ink:#17242d; --muted:#536471; --line:#d7e0e6; --paper:#fff; --wash:#f2f5f7; --h1:#2868a2; --h2:#a45a12; }
+* { box-sizing:border-box } body { margin:0; background:var(--wash); color:var(--ink); font:15px/1.6 system-ui,sans-serif }
+main { max-width:1240px; margin:auto; padding:36px 24px 64px } h1 { font-size:28px; line-height:1.2; margin:8px 0 16px } h2 { font-size:21px; margin:32px 0 12px } h3 { font-size:17px; margin:0 0 12px }
+p { max-width:95ch } .muted,caption { color:var(--muted) } .eyebrow { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted) }
+.toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:20px; margin:24px 0 } label { display:grid; gap:5px } select { padding:9px; border:1px solid var(--line); background:var(--paper); color:var(--ink); font:inherit }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:20px 0 } .stat strong { display:block; font-size:25px; font-variant-numeric:tabular-nums } .stat span { color:var(--muted) }
+.charts { display:grid; grid-template-columns:1fr 1fr; gap:24px } figure { margin:16px 0; padding:18px; background:var(--paper) } svg { width:100%; height:auto } figcaption { font-size:12px; color:var(--muted) }
+.scroll { overflow-x:auto; background:var(--paper) } table { border-collapse:collapse; width:100%; font-size:13px } th,td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums } th { background:var(--wash) } th:first-child,td:first-child { text-align:left } caption { text-align:left; padding:12px; font-size:13px }
+.h1 { color:var(--h1) } .h2 { color:var(--h2) } .legend { display:flex; gap:24px; font-weight:600 } code { background:var(--wash); padding:2px 5px } details { border-bottom:1px solid var(--line); padding:12px 0 } summary { cursor:pointer } pre { white-space:pre-wrap; overflow-wrap:anywhere; font-size:13px } .proof { background:var(--paper); padding:20px 24px; border-left:3px solid var(--h2) } a { color:var(--h1) } .status { color:var(--muted) }
+@media(max-width:800px) { .stats { grid-template-columns:1fr 1fr } .charts { grid-template-columns:1fr } main { padding:24px 12px } }
+@media print { body { background:white } main { padding:0 } .toolbar { display:none } .scroll { overflow:visible } .charts { break-inside:avoid } }
+</style>
+<main>
+<div class="eyebrow">Block World · IDA* · badanie odtwarzalne</div>
+<h1>Czy silniejsza heurystyka zmniejsza koszt przeszukiwania?</h1>
+<p><b class="h1">h1 — błędne podłoża</b> liczy klocki na innym bezpośrednim podłożu niż w celu.
+<b class="h2">h2 — obowiązkowe ruchy</b> uwzględnia także konieczność zdejmowania klocków znad błędnie ustawionych fragmentów wieży i ograniczenia wariantu podstawowego.</p>
+<p id="config" class="muted"></p>
+<div class="toolbar">
+<label>Wariant ruchów<select id="variant"></select></label>
+<label>Liczba klocków N<select id="size"><option value="all">Wszystkie rozmiary</option></select></label>
+<a href="wyniki.csv" download>Pobierz CSV</a><a href="wyniki.json" download>Pełne dane i sekwencje JSON</a>
+</div>
+<div class="stats" id="stats"></div>
+<p id="conclusion"></p>
+<div class="legend"><span class="h1">h1 · błędne podłoża</span><span class="h2">h2 · obowiązkowe ruchy</span></div>
+<div class="charts">
+<figure><h3>Średnia liczba rozwinięć węzłów</h3><svg id="nodes" viewBox="0 0 600 320" role="img" aria-label="Średnia liczba rozwinięć według N, skala logarytmiczna"></svg><figcaption>Źródło: lokalne przebiegi IDA* w tym raporcie. Średnia po wszystkich próbach, także przerwanych limitem. Oś X: log10(1 + liczba rozwinięć); etykiety pokazują liczbę rozwinięć. Oś Y: liczba klocków N.</figcaption></figure>
+<figure><h3>Średni czas przeszukiwania</h3><svg id="times" viewBox="0 0 600 320" role="img" aria-label="Średni czas w sekundach według N"></svg><figcaption>Źródło: lokalne przebiegi IDA* w tym raporcie. Średnia po wszystkich próbach, także przerwanych limitem. Oś X: czas [s], skala liniowa. Oś Y: liczba klocków N.</figcaption></figure>
+</div>
+<h2>Porównanie według liczby klocków</h2>
+<div class="scroll"><table><caption>Średnie po wszystkich problemach danego rozmiaru. Przebieg zatrzymany na limicie wnosi do średniej liczbę rozwinięć równą limitowi oraz czas do przerwania; nie jest ukończonym rozwiązaniem.</caption>
+<thead><tr><th>N</th><th>h1 sukcesy</th><th>h2 sukcesy</th><th>h1 śr. węzły</th><th>h2 śr. węzły</th><th>h1 śr. czas [s]</th><th>h2 śr. czas [s]</th><th>Równe długości / wspólne sukcesy</th></tr></thead><tbody id="summary"></tbody></table></div>
+<h2>Porównanie na wspólnie rozwiązanych problemach</h2>
+<div class="scroll"><table><caption>Obie heurystyki muszą zakończyć się sukcesem. Ta sama grupa problemów w obu kolumnach; pomijamy rozmiary bez wspólnych sukcesów.</caption>
+<thead><tr><th>N</th><th>Liczba par</th><th>h1 śr. węzły</th><th>h2 śr. węzły</th><th>h1 śr. czas [s]</th><th>h2 śr. czas [s]</th></tr></thead><tbody id="common"></tbody></table></div>
+<h2>Wyniki każdego problemu</h2>
+<div class="scroll"><table><caption>„Limit” oznacza brak rozwiązania w budżecie. „—” w porównaniu długości oznacza, że przynajmniej jedna heurystyka nie znalazła sekwencji — równość nie została wtedy sprawdzona.</caption>
+<thead><tr><th>Problem</th><th>h1 węzły</th><th>h2 węzły</th><th>h1 czas [s]</th><th>h2 czas [s]</th><th>h1 długość</th><th>h2 długość</th><th>Równe?</th></tr></thead><tbody id="problems"></tbody></table></div>
+<h2>Druga heurystyka i dowód dopuszczalności</h2>
+<div class="proof">
+<p>Klocek jest <b>ustalony</b>, gdy jego cały łańcuch podłoży aż do stołu zgadza się z układem docelowym. Nie wystarcza zgodność samego bezpośredniego podłoża.</p>
+<p>Dla każdego klocka <code>b</code> wyznaczamy dolne ograniczenie <code>c(b)</code>:</p>
+<ul><li><b>0</b>, jeśli klocek jest ustalony;</li><li><b>2</b>, jeśli nie jest ustalony, ale jego bezpośrednie podłoże zgadza się z celem. Niżej jest coś do przestawienia: trzeba zdjąć <code>b</code>, a potem odłożyć go na jego docelowe podłoże;</li><li><b>2</b> również wtedy, gdy w wariancie podstawowym aktualne i docelowe podłoże to dwa różne klocki — konieczny jest ruch przez stół;</li><li><b>1</b> w pozostałych przypadkach niezgodnego podłoża.</li></ul>
+<p><b>h2(s) = suma c(b).</b> Każdy składnik jest konieczną liczbą ruchów konkretnego klocka. Jeden ruch dotyczy tylko jednego klocka, więc składniki nie liczą tego samego ruchu dwukrotnie. Stąd <code>h2(s) ≤ koszt optymalny(s)</code>. Ponadto <code>h2(cel) = 0</code> i <code>h2(s) ≥ h1(s)</code>. Obie heurystyki są dopuszczalne, więc każde znalezione przez IDA* rozwiązanie jest optymalne. Różne sekwencje mogą mieć tę samą optymalną długość.</p>
+<p>Przykład: <code>start = [0,1,2]</code>, <code>cel = [0,0,2]</code>. Heurystyka h1 wynosi 1. Klocek 2 musi zejść na stół (1 ruch), a klocek 3 musi zejść z 2 i na niego wrócić (2 ruchy). Heurystyka h2 wynosi 3, tak jak koszt optymalny.</p>
+</div>
+<h2>Układy, ziarna i znalezione sekwencje</h2><div id="details"></div>
+<h2>Metodyka i zakres wniosków</h2>
+<ul><li>Losowe pary dla każdego N; liczbę problemów podano u góry raportu. Nie losowano ponownie problemów, których heurystyka nie rozwiązała. Ten sam zestaw układów dla obu wariantów i obu heurystyk.</li><li>Generator wybiera losową permutację klocków, liczbę cięć i miejsca cięć na wieże. Nie daje rozkładu jednostajnego po wszystkich poprawnych stanach.</li><li>Przebiegi wykonywane sekwencyjnie, ze zmienną kolejnością heurystyk i krótką rozgrzewką. Ten sam algorytm IDA*, kolejność generowania ruchów i limit rozwinięć.</li><li>Czas obejmuje heurystykę i całe przeszukiwanie; nie obejmuje generowania problemu, zapisu ani weryfikacji. Pojedynczy pomiar czasu na przebieg — krótkie czasy są podatne na szum systemowy.</li><li>Licznik sumuje odwiedziny w progu f ze wszystkich iteracji, łącznie z celem. Odcięte węzły nie są rozwinięciami, lecz ich sprawdzenie i policzenie heurystyki zabiera czas.</li><li>Każdą znalezioną sekwencję sprawdzono ruch po ruchu zgodnie z wariantem. W testach porównano obie heurystyki z BFS dla wszystkich par układów trzech klocków, a dopuszczalność i spójność h2 sprawdzono dla wszystkich par układów czterech klocków.</li><li>Wyniki dotyczą tego zestawu i tego budżetu. Mniejsza liczba rozwinięć nie musi oznaczać krótszego czasu: obliczenie h2 jest droższe niż h1.</li></ul>
+<p id="environment" class="muted"></p>
+</main>
+<script id="data" type="application/json">__DANE_POROWNANIA__</script>
+<script>
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const H1='h1_podloza',H2='h2_obowiazkowe_ruchy';
+const $=id=>document.getElementById(id), num=(n,d=1)=>n.toLocaleString('pl-PL',{maximumFractionDigits:d,minimumFractionDigits:d});
+const cell=v=>`<td>${v}</td>`, row=xs=>`<tr>${xs.map(cell).join('')}</tr>`;
+const c=DATA.konfiguracja;
+$('config').textContent=`N ∈ {${c.rozmiary.join(', ')}} · ${c.problemow_na_n} problemów na N · limit ${num(c.limit_wezlow,0)} rozwinięć na przebieg · bez limitu czasu · ziarno bazowe ${c.ziarno_bazowe}.`;
+$('environment').textContent=`Python ${c.python} · ${c.system} · rozpoczęcie ${c.czas_rozpoczecia} · jeden pomiar na przebieg.`;
+for(const v of c.warianty){const opt=document.createElement('option');opt.value=v;opt.textContent=v==='PODSTAWOWY'?'Podstawowy — ruch przez stół':'Rozszerzony — ruch bezpośredni';$('variant').append(opt)}
+for(const n of c.rozmiary){const opt=document.createElement('option');opt.value=n;opt.textContent=n;$('size').append(opt)}
+function plot(id,groups,key,log){
+ const svg=$(id), W=600,H=320,L=62,R=90,T=18,B=55,inner=W-L-R;
+ const maximum=Math.max(1,...groups.flatMap(g=>[g.metryki[H1][key],g.metryki[H2][key]]));
+ const trans=x=>log?Math.log10(1+x):x, scale=x=>trans(x)/trans(maximum)*inner;
+ let html=`<title>${log?'Średnia liczba rozwinięć':'Średni czas [s]'} według N</title>`;
+ for(let j=0;j<=4;j++){const x=L+inner*j/4,v=log?10**(trans(maximum)*j/4)-1:maximum*j/4;html+=`<line x1="${x}" y1="${T}" x2="${x}" y2="${H-B}" stroke="var(--line)"/><text x="${x}" y="${H-B+22}" text-anchor="middle" fill="var(--muted)" font-size="12">${num(v,log?0:2)}</text>`}
+ const step=(H-T-B)/groups.length;
+ groups.forEach((g,i)=>{const y=T+i*step+step/2;html+=`<text x="${L-15}" y="${y+4}" text-anchor="end" fill="var(--ink)" font-size="13">${g.n}</text>`;
+ [H1,H2].forEach((h,j)=>{const value=g.metryki[h][key],yy=y+(j===0?-14:2),ww=scale(value);html+=`<rect x="${L}" y="${yy}" width="${ww}" height="12" fill="var(--${j===0?'h1':'h2'})"><title>${h}: ${num(value,log?1:4)}</title></rect><text x="${L+ww+5}" y="${yy+11}" fill="var(--ink)" font-size="11">${num(value,log?1:3)}</text>`})});
+ html+=`<text x="${W/2}" y="${H-6}" text-anchor="middle" fill="var(--muted)" font-size="13">${log?'Średnia liczba rozwinięć [węzły], skala log10(1+x)':'Średni czas [s]'}</text><text x="14" y="${H/2}" transform="rotate(-90 14 ${H/2})" text-anchor="middle" fill="var(--muted)" font-size="13">Liczba klocków N</text>`;
+ svg.innerHTML=html;
+}
+function render(){
+ const variant=$('variant').value,size=$('size').value;
+ const rows=DATA.problemy.filter(p=>p.wariant===variant&&(size==='all'||p.n===+size));
+ const groups=DATA.podsumowanie.filter(g=>g.wariant===variant&&(size==='all'||g.n===+size));
+ const solved=h=>rows.filter(p=>p.wyniki[h].sukces).length, common=rows.filter(p=>p.rowne_dlugosci!==null),equal=common.filter(p=>p.rowne_dlugosci).length;
+ $('stats').innerHTML=[['h1: znalezione rozwiązania',`${solved(H1)} / ${rows.length}`],['h2: znalezione rozwiązania',`${solved(H2)} / ${rows.length}`],['Równe długości / wspólne sukcesy',`${equal} / ${common.length}`],['Pary bez porównania długości',`${rows.length-common.length}`]].map(([label,value])=>`<div class="stat"><strong>${value}</strong><span>${label}</span></div>`).join('');
+ $('conclusion').textContent=`W ${common.length} problemach obie heurystyki znalazły rozwiązanie; ${equal} par ma tę samą długość, a ${common.length-equal} różną. W ${rows.length-common.length} problemach limit uniemożliwił porównanie długości.`;
+ $('summary').innerHTML=groups.map(g=>{const a=g.metryki[H1],b=g.metryki[H2];return row([g.n,`${a.sukcesy}/${g.liczba_problemow}`,`${b.sukcesy}/${g.liczba_problemow}`,num(a.srednie_wezly_wszystkie),num(b.srednie_wezly_wszystkie),num(a.sredni_czas_s_wszystkie,4),num(b.sredni_czas_s_wszystkie,4),`${g.rowne_dlugosci}/${g.wspolnie_rozwiazane}`])}).join('');
+ $('common').innerHTML=groups.filter(g=>g.wspolnie_rozwiazane).map(g=>row([g.n,g.wspolnie_rozwiazane,num(g.metryki[H1].srednie_wezly_wspolne),num(g.metryki[H2].srednie_wezly_wspolne),num(g.metryki[H1].sredni_czas_s_wspolne,4),num(g.metryki[H2].sredni_czas_s_wspolne,4)])).join('');
+ $('problems').innerHTML=rows.map(p=>{const a=p.wyniki[H1],b=p.wyniki[H2];return row([`N=${p.n} · P${p.problem}`,`${num(a.wezly,0)}${a.sukces?'':' · limit'}`,`${num(b.wezly,0)}${b.sukces?'':' · limit'}`,num(a.czas_s,4),num(b.czas_s,4),a.dlugosc??'—',b.dlugosc??'—',p.rowne_dlugosci===null?'—':p.rowne_dlugosci?'TAK':'NIE'])}).join('');
+ $('details').innerHTML=rows.map(p=>`<details><summary>N=${p.n} · P${p.problem} · ziarno ${p.ziarno} · h1(start)=${p.wyniki[H1].h_start}, h2(start)=${p.wyniki[H2].h_start}</summary><pre>Start: ${JSON.stringify(p.start)}\nCel:   ${JSON.stringify(p.cel)}\n\nh1: ${JSON.stringify(p.wyniki[H1].sekwencja)}\nh2: ${JSON.stringify(p.wyniki[H2].sekwencja)}</pre></details>`).join('');
+ plot('nodes',groups,'srednie_wezly_wszystkie',true);plot('times',groups,'sredni_czas_s_wszystkie',false);
+}
+$('variant').addEventListener('change',render);$('size').addEventListener('change',render);render();
+</script>
+</html>

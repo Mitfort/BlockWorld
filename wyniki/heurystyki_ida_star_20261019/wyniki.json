@@ -1,0 +1,5583 @@
+{
+  "konfiguracja": {
+    "rozmiary": [
+      6,
+      8,
+      10,
+      12,
+      15
+    ],
+    "problemow_na_n": 5,
+    "warianty": [
+      "PODSTAWOWY",
+      "ROZSZERZONY"
+    ],
+    "limit_wezlow": 30000,
+    "limit_czasu": null,
+    "ziarno_bazowe": 20261019,
+    "wzor_ziarna": "ziarno_bazowe + 100 * N + numer_problemu (od 1)",
+    "python": "3.11.9",
+    "system": "Windows-10-10.0.26300-SP0",
+    "czas_rozpoczecia": "2026-10-19T21:20:06.505504+02:00",
+    "definicja_wezlow": "Suma odwiedzin w progu f we wszystkich iteracjach, łącznie z celem.",
+    "pomiar_czasu": "perf_counter wewnątrz ida_star; bez generowania, weryfikacji i zapisu.",
+    "powtorzenia_pomiaru": 1
+  },
+  "podsumowanie": [
+    {
+      "wariant": "PODSTAWOWY",
+      "n": 6,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 26.6,
+          "sredni_czas_s_wszystkie": 0.0009766600094735622,
+          "srednie_wezly_wspolne": 26.6,
+          "sredni_czas_s_wspolne": 0.0009766600094735622
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 6,
+          "sredni_czas_s_wszystkie": 0.0002859800006262958,
+          "srednie_wezly_wspolne": 6,
+          "sredni_czas_s_wspolne": 0.0002859800006262958
+        }
+      }
+    },
+    {
+      "wariant": "PODSTAWOWY",
+      "n": 8,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 580.8,
+          "sredni_czas_s_wszystkie": 0.019703060016036035,
+          "srednie_wezly_wspolne": 580.8,
+          "sredni_czas_s_wspolne": 0.019703060016036035
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 8,
+          "sredni_czas_s_wszystkie": 0.0008420000085607171,
+          "srednie_wezly_wspolne": 8,
+          "sredni_czas_s_wspolne": 0.0008420000085607171
+        }
+      }
+    },
+    {
+      "wariant": "PODSTAWOWY",
+      "n": 10,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 12,
+          "sredni_czas_s_wszystkie": 0.0013351800153031945,
+          "srednie_wezly_wspolne": 12,
+          "sredni_czas_s_wspolne": 0.0013351800153031945
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 7.8,
+          "sredni_czas_s_wszystkie": 0.001552099990658462,
+          "srednie_wezly_wspolne": 7.8,
+          "sredni_czas_s_wspolne": 0.001552099990658462
+        }
+      }
+    },
+    {
+      "wariant": "PODSTAWOWY",
+      "n": 12,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 3,
+      "rowne_dlugosci": 3,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 3,
+          "srednie_wezly_wszystkie": 12012,
+          "sredni_czas_s_wszystkie": 1.4176623800070955,
+          "srednie_wezly_wspolne": 20,
+          "sredni_czas_s_wspolne": 0.007449399990340074
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 10.6,
+          "sredni_czas_s_wszystkie": 0.003111919993534684,
+          "srednie_wezly_wspolne": 6.666666666666667,
+          "sredni_czas_s_wspolne": 0.0016915666637942195
+        }
+      }
+    },
+    {
+      "wariant": "PODSTAWOWY",
+      "n": 15,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 1,
+      "rowne_dlugosci": 1,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 1,
+          "srednie_wezly_wszystkie": 24275,
+          "sredni_czas_s_wszystkie": 8.269274339999537,
+          "srednie_wezly_wspolne": 1375,
+          "sredni_czas_s_wspolne": 0.29077580000739545
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 17.6,
+          "sredni_czas_s_wszystkie": 0.015106960013508797,
+          "srednie_wezly_wspolne": 19,
+          "sredni_czas_s_wspolne": 0.021454900037497282
+        }
+      }
+    },
+    {
+      "wariant": "ROZSZERZONY",
+      "n": 6,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 15.4,
+          "sredni_czas_s_wszystkie": 0.0003635999863035977,
+          "srednie_wezly_wspolne": 15.4,
+          "sredni_czas_s_wspolne": 0.0003635999863035977
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 9.4,
+          "sredni_czas_s_wszystkie": 0.00048686000518500806,
+          "srednie_wezly_wspolne": 9.4,
+          "sredni_czas_s_wspolne": 0.00048686000518500806
+        }
+      }
+    },
+    {
+      "wariant": "ROZSZERZONY",
+      "n": 8,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 344.4,
+          "sredni_czas_s_wszystkie": 0.017784240003675223,
+          "srednie_wezly_wspolne": 344.4,
+          "sredni_czas_s_wspolne": 0.017784240003675223
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 12.2,
+          "sredni_czas_s_wszystkie": 0.0016439000144600868,
+          "srednie_wezly_wspolne": 12.2,
+          "sredni_czas_s_wspolne": 0.0016439000144600868
+        }
+      }
+    },
+    {
+      "wariant": "ROZSZERZONY",
+      "n": 10,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 5,
+      "rowne_dlugosci": 5,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 11.8,
+          "sredni_czas_s_wszystkie": 0.00238003998529166,
+          "srednie_wezly_wspolne": 11.8,
+          "sredni_czas_s_wspolne": 0.00238003998529166
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 9.4,
+          "sredni_czas_s_wszystkie": 0.0024449600139632823,
+          "srednie_wezly_wspolne": 9.4,
+          "sredni_czas_s_wspolne": 0.0024449600139632823
+        }
+      }
+    },
+    {
+      "wariant": "ROZSZERZONY",
+      "n": 12,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 3,
+      "rowne_dlugosci": 3,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 3,
+          "srednie_wezly_wszystkie": 12006.2,
+          "sredni_czas_s_wszystkie": 2.94658265998587,
+          "srednie_wezly_wspolne": 10.333333333333334,
+          "sredni_czas_s_wspolne": 0.0035462999949231744
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 5,
+          "srednie_wezly_wszystkie": 123,
+          "sredni_czas_s_wszystkie": 0.057154260016977786,
+          "srednie_wezly_wspolne": 5.666666666666667,
+          "sredni_czas_s_wspolne": 0.0021482000205044947
+        }
+      }
+    },
+    {
+      "wariant": "ROZSZERZONY",
+      "n": 15,
+      "liczba_problemow": 5,
+      "wspolnie_rozwiazane": 2,
+      "rowne_dlugosci": 2,
+      "rozne_dlugosci": 0,
+      "metryki": {
+        "h1_podloza": {
+          "sukcesy": 2,
+          "srednie_wezly_wszystkie": 18510.8,
+          "sredni_czas_s_wszystkie": 8.78952272000024,
+          "srednie_wezly_wspolne": 1277,
+          "sredni_czas_s_wspolne": 0.8460427999962121
+        },
+        "h2_obowiazkowe_ruchy": {
+          "sukcesy": 3,
+          "srednie_wezly_wszystkie": 12129.8,
+          "sredni_czas_s_wszystkie": 13.56708757999586,
+          "srednie_wezly_wspolne": 23.5,
+          "sredni_czas_s_wspolne": 0.028538299986394122
+        }
+      }
+    }
+  ],
+  "problemy": [
+    {
+      "n": 6,
+      "problem": 1,
+      "ziarno": 20261620,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 2.8500042390078306e-05,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              1,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 3.519997699186206e-05,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              1,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 1,
+      "ziarno": 20261620,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 1.9499973859637976e-05,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              1,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 4.959997022524476e-05,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              1,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 2,
+      "ziarno": 20261621,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        6,
+        5,
+        0,
+        4
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 10,
+          "czas_s": 0.0003652000450529158,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.0003244000254198909,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 2,
+      "ziarno": 20261621,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        3,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        6,
+        5,
+        0,
+        4
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.00034139998024329543,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 4,
+          "czas_s": 0.00047389999963343143,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              3,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 3,
+      "ziarno": 20261622,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        5,
+        1,
+        0,
+        6,
+        4,
+        3
+      ],
+      "cel": [
+        2,
+        0,
+        0,
+        5,
+        3,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 61,
+          "czas_s": 0.0027292000013403594,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 9,
+          "sukces": true,
+          "wezly": 10,
+          "czas_s": 0.000380899989977479,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 3,
+      "ziarno": 20261622,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        5,
+        1,
+        0,
+        6,
+        4,
+        3
+      ],
+      "cel": [
+        2,
+        0,
+        0,
+        5,
+        3,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 45,
+          "czas_s": 0.0008240999886766076,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 27,
+          "czas_s": 0.0010124000255018473,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 4,
+      "ziarno": 20261623,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        6,
+        4,
+        2
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 30,
+          "czas_s": 0.0013618000084534287,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.0004957999917678535,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 4,
+      "ziarno": 20261623,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        6,
+        4,
+        2
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.00031649996526539326,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 4,
+          "czas_s": 0.0003377000102773309,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              6,
+              2
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 5,
+      "ziarno": 20261624,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "cel": [
+        2,
+        0,
+        0,
+        3,
+        1,
+        4
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 30,
+          "czas_s": 0.0003985999501310289,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.0001936000189743936,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 6,
+      "problem": 5,
+      "ziarno": 20261624,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        6,
+        0,
+        2,
+        4,
+        0
+      ],
+      "cel": [
+        2,
+        0,
+        0,
+        3,
+        1,
+        4
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 17,
+          "czas_s": 0.00031650002347305417,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 10,
+          "czas_s": 0.0005607000202871859,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 1,
+      "ziarno": 20261820,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        8,
+        6,
+        2,
+        0,
+        3,
+        4,
+        0,
+        5
+      ],
+      "cel": [
+        6,
+        0,
+        2,
+        0,
+        1,
+        7,
+        3,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 1209,
+          "czas_s": 0.03585300000850111,
+          "dlugosc": 11,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 12,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 11,
+          "sukces": true,
+          "wezly": 12,
+          "czas_s": 0.0009994999854825437,
+          "dlugosc": 11,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 12,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 1,
+      "ziarno": 20261820,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        8,
+        6,
+        2,
+        0,
+        3,
+        4,
+        0,
+        5
+      ],
+      "cel": [
+        6,
+        0,
+        2,
+        0,
+        1,
+        7,
+        3,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 1322,
+          "czas_s": 0.059614299971144646,
+          "dlugosc": 10,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 11,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 8,
+          "sukces": true,
+          "wezly": 26,
+          "czas_s": 0.0027422000421211123,
+          "dlugosc": 10,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 11,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 2,
+      "ziarno": 20261821,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 0.00013650004984810948,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              7,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 0.00040010001976042986,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              7,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 2,
+      "ziarno": 20261821,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 0.00020050001330673695,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              7,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 1,
+          "sukces": true,
+          "wezly": 2,
+          "czas_s": 0.00029850000282749534,
+          "dlugosc": 1,
+          "sekwencja": [
+            [
+              7,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 2,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 3,
+      "ziarno": 20261822,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        5,
+        0,
+        0,
+        6,
+        0,
+        2,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 17,
+          "czas_s": 0.0014661999884992838,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.000957300013396889,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 3,
+      "ziarno": 20261822,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        5,
+        0,
+        0,
+        6,
+        0,
+        2,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 17,
+          "czas_s": 0.0024559000157751143,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.0006689000292681158,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              7,
+              2
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 4,
+      "ziarno": 20261823,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        5,
+        0
+      ],
+      "cel": [
+        2,
+        0,
+        4,
+        6,
+        0,
+        7,
+        8,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 1051,
+          "czas_s": 0.03613150003366172,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 9,
+          "sukces": true,
+          "wezly": 10,
+          "czas_s": 0.0008005999843589962,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 4,
+      "ziarno": 20261823,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        5,
+        0
+      ],
+      "cel": [
+        2,
+        0,
+        4,
+        6,
+        0,
+        7,
+        8,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 72,
+          "czas_s": 0.0032931999885477126,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 9,
+          "czas_s": 0.0010287000332027674,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              8,
+              1
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              6,
+              7
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 5,
+      "ziarno": 20261824,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        7,
+        2,
+        0,
+        0,
+        0,
+        6
+      ],
+      "cel": [
+        7,
+        5,
+        6,
+        3,
+        0,
+        1,
+        8,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 625,
+          "czas_s": 0.02492809999966994,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 9,
+          "sukces": true,
+          "wezly": 10,
+          "czas_s": 0.0010525000398047268,
+          "dlugosc": 9,
+          "sekwencja": [
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "maks_stanow_na_sciezce": 10,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 8,
+      "problem": 5,
+      "ziarno": 20261824,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        7,
+        2,
+        0,
+        0,
+        0,
+        6
+      ],
+      "cel": [
+        7,
+        5,
+        6,
+        3,
+        0,
+        1,
+        8,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 309,
+          "czas_s": 0.023357300029601902,
+          "dlugosc": 8,
+          "sekwencja": [
+            [
+              3,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "maks_stanow_na_sciezce": 9,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 18,
+          "czas_s": 0.0034811999648809433,
+          "dlugosc": 8,
+          "sekwencja": [
+            [
+              3,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              5
+            ]
+          ],
+          "maks_stanow_na_sciezce": 9,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 1,
+      "ziarno": 20262020,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        7,
+        9,
+        1,
+        3,
+        2,
+        8,
+        6,
+        5,
+        0,
+        4
+      ],
+      "cel": [
+        9,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 23,
+          "czas_s": 0.0010560000082477927,
+          "dlugosc": 12,
+          "sekwencja": [
+            [
+              10,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 13,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 12,
+          "sukces": true,
+          "wezly": 13,
+          "czas_s": 0.001477800018619746,
+          "dlugosc": 12,
+          "sekwencja": [
+            [
+              10,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 13,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 1,
+      "ziarno": 20262020,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        7,
+        9,
+        1,
+        3,
+        2,
+        8,
+        6,
+        5,
+        0,
+        4
+      ],
+      "cel": [
+        9,
+        0,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 22,
+          "czas_s": 0.0014752999995835125,
+          "dlugosc": 11,
+          "sekwencja": [
+            [
+              10,
+              0
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 12,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 21,
+          "czas_s": 0.004707599990069866,
+          "dlugosc": 11,
+          "sekwencja": [
+            [
+              10,
+              0
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              1,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 12,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 2,
+      "ziarno": 20262021,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        3,
+        1,
+        0,
+        8,
+        9,
+        0,
+        4,
+        0,
+        7,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 11,
+          "czas_s": 0.001791900023818016,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.0022475000005215406,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 2,
+      "ziarno": 20262021,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        3,
+        1,
+        0,
+        8,
+        9,
+        0,
+        4,
+        0,
+        7,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 11,
+          "czas_s": 0.003012400004081428,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.001313100045081228,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              7
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 3,
+      "ziarno": 20262022,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        8,
+        0,
+        9,
+        10,
+        0,
+        1,
+        0,
+        5,
+        6
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0011294999858364463,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0012461000005714595,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 3,
+      "ziarno": 20262022,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        8,
+        0,
+        9,
+        10,
+        0,
+        1,
+        0,
+        5,
+        6
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0019734999514184892,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0016108000418171287,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 4,
+      "ziarno": 20262023,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        6,
+        9,
+        2,
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.0010681000421755016,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.001379899971652776,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 4,
+      "ziarno": 20262023,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        6,
+        9,
+        2,
+        0,
+        3,
+        1,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.001836799958255142,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.002477700007148087,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              3,
+              6
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              1
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 5,
+      "ziarno": 20262024,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        6,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        4,
+        5,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 14,
+          "czas_s": 0.001630400016438216,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.001409199961926788,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 10,
+      "problem": 5,
+      "ziarno": 20262024,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        6,
+        0,
+        10,
+        0,
+        0,
+        0,
+        0,
+        4,
+        5,
+        1
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 14,
+          "czas_s": 0.0036022000131197274,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.0021155999857001007,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              3,
+              10
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 1,
+      "ziarno": 20262220,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        8,
+        12,
+        0,
+        7,
+        0,
+        0,
+        0,
+        9,
+        0,
+        6,
+        0,
+        1
+      ],
+      "cel": [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 27,
+          "czas_s": 0.00530999997863546,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 7,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.0017260999884456396,
+          "dlugosc": 7,
+          "sekwencja": [
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 8,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 1,
+      "ziarno": 20262220,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        8,
+        12,
+        0,
+        7,
+        0,
+        0,
+        0,
+        9,
+        0,
+        6,
+        0,
+        1
+      ],
+      "cel": [
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 21,
+          "czas_s": 0.006693200033623725,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0018718999926932156,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              4,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 2,
+      "ziarno": 20262221,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        10,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "cel": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 8,
+          "czas_s": 0.0024252000148408115,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 4,
+          "sukces": true,
+          "wezly": 5,
+          "czas_s": 0.00048640003660693765,
+          "dlugosc": 4,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 5,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 2,
+      "ziarno": 20262221,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        10,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "cel": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 4,
+          "czas_s": 0.0011892999755218625,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              1,
+              7
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 3,
+          "sukces": true,
+          "wezly": 4,
+          "czas_s": 0.0010309000499546528,
+          "dlugosc": 3,
+          "sekwencja": [
+            [
+              1,
+              7
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 4,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 3,
+      "ziarno": 20262222,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        0,
+        5,
+        0,
+        0,
+        9,
+        0,
+        2,
+        11,
+        0,
+        1,
+        0,
+        4
+      ],
+      "cel": [
+        0,
+        0,
+        5,
+        10,
+        2,
+        12,
+        6,
+        9,
+        11,
+        3,
+        1,
+        8
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 11,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 2.1977388000232168,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 12,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 16,
+          "sukces": true,
+          "wezly": 17,
+          "czas_s": 0.003926999983377755,
+          "dlugosc": 16,
+          "sekwencja": [
+            [
+              7,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 17,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 12,
+      "problem": 3,
+      "ziarno": 20262222,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        0,
+        5,
+        0,
+        0,
+        9,
+        0,
+        2,
+        11,
+        0,
+        1,
+        0,
+        4
+      ],
+      "cel": [
+        0,
+        0,
+        5,
+        10,
+        2,
+        12,
+        6,
+        9,
+        11,
+        3,
+        1,
+        8
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 11,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 8.054517999989912,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 13,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 11,
+          "sukces": true,
+          "wezly": 391,
+          "czas_s": 0.20552389998920262,
+          "dlugosc": 13,
+          "sekwencja": [
+            [
+              7,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              10,
+              3
+            ],
+            [
+              11,
+              1
+            ],
+            [
+              9,
+              11
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              12,
+              8
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              6,
+              12
+            ],
+            [
+              7,
+              6
+            ]
+          ],
+          "maks_stanow_na_sciezce": 14,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 12,
+      "problem": 4,
+      "ziarno": 20262223,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        12,
+        0,
+        6,
+        0,
+        3,
+        0,
+        1,
+        7,
+        4,
+        11,
+        5,
+        2
+      ],
+      "cel": [
+        12,
+        0,
+        7,
+        0,
+        0,
+        0,
+        2,
+        0,
+        3,
+        4,
+        8,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 8,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 4.868224900041241,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 12,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 15,
+          "sukces": true,
+          "wezly": 16,
+          "czas_s": 0.006557899992913008,
+          "dlugosc": 15,
+          "sekwencja": [
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "maks_stanow_na_sciezce": 16,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 12,
+      "problem": 4,
+      "ziarno": 20262223,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        12,
+        0,
+        6,
+        0,
+        3,
+        0,
+        1,
+        7,
+        4,
+        11,
+        5,
+        2
+      ],
+      "cel": [
+        12,
+        0,
+        7,
+        0,
+        0,
+        0,
+        2,
+        0,
+        3,
+        4,
+        8,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 8,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 6.667756399954669,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 11,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 207,
+          "czas_s": 0.07380280003417283,
+          "dlugosc": 12,
+          "sekwencja": [
+            [
+              8,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              10,
+              4
+            ],
+            [
+              11,
+              8
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              12
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "maks_stanow_na_sciezce": 13,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 12,
+      "problem": 5,
+      "ziarno": 20262224,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        3
+      ],
+      "cel": [
+        11,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 25,
+          "czas_s": 0.01461299997754395,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 6,
+          "sukces": true,
+          "wezly": 7,
+          "czas_s": 0.0028621999663300812,
+          "dlugosc": 6,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 7,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 12,
+      "problem": 5,
+      "ziarno": 20262224,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        7,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        3
+      ],
+      "cel": [
+        11,
+        1,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.0027563999756239355,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              11
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 5,
+          "sukces": true,
+          "wezly": 6,
+          "czas_s": 0.003541800018865615,
+          "dlugosc": 5,
+          "sekwencja": [
+            [
+              1,
+              11
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              12,
+              0
+            ]
+          ],
+          "maks_stanow_na_sciezce": 6,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 15,
+      "problem": 1,
+      "ziarno": 20262520,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        12,
+        15,
+        14,
+        3,
+        4,
+        5,
+        1,
+        11,
+        0,
+        2,
+        7,
+        13,
+        10,
+        8,
+        9
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        4,
+        15,
+        0,
+        0,
+        0,
+        11,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 14,
+          "sukces": true,
+          "wezly": 1375,
+          "czas_s": 0.29077580000739545,
+          "dlugosc": 18,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "maks_stanow_na_sciezce": 19,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 18,
+          "sukces": true,
+          "wezly": 19,
+          "czas_s": 0.021454900037497282,
+          "dlugosc": 18,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "maks_stanow_na_sciezce": 19,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 15,
+      "problem": 1,
+      "ziarno": 20262520,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        12,
+        15,
+        14,
+        3,
+        4,
+        5,
+        1,
+        11,
+        0,
+        2,
+        7,
+        13,
+        10,
+        8,
+        9
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        4,
+        15,
+        0,
+        0,
+        0,
+        11,
+        0,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 14,
+          "sukces": true,
+          "wezly": 37,
+          "czas_s": 0.017103899968788028,
+          "dlugosc": 16,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "maks_stanow_na_sciezce": 17,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 14,
+          "sukces": true,
+          "wezly": 36,
+          "czas_s": 0.045257799967657775,
+          "dlugosc": 16,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              12,
+              11
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "maks_stanow_na_sciezce": 17,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 15,
+      "problem": 2,
+      "ziarno": 20262521,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        6,
+        12,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3,
+        0,
+        9,
+        1,
+        0,
+        8,
+        0,
+        5
+      ],
+      "cel": [
+        14,
+        0,
+        2,
+        15,
+        8,
+        0,
+        4,
+        0,
+        0,
+        0,
+        13,
+        0,
+        3,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 11,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 14.150851899990812,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 13,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 15,
+          "sukces": true,
+          "wezly": 16,
+          "czas_s": 0.015489700017496943,
+          "dlugosc": 15,
+          "sekwencja": [
+            [
+              7,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              14
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              7,
+              4
+            ]
+          ],
+          "maks_stanow_na_sciezce": 16,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 2,
+      "ziarno": 20262521,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        6,
+        12,
+        0,
+        0,
+        0,
+        0,
+        2,
+        3,
+        0,
+        9,
+        1,
+        0,
+        8,
+        0,
+        5
+      ],
+      "cel": [
+        14,
+        0,
+        2,
+        15,
+        8,
+        0,
+        4,
+        0,
+        0,
+        0,
+        13,
+        0,
+        3,
+        0,
+        0
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 11,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 19.411984600010328,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 13,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 11,
+          "sukces": true,
+          "wezly": 602,
+          "czas_s": 0.8455512999789789,
+          "dlugosc": 12,
+          "sekwencja": [
+            [
+              10,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              15,
+              0
+            ],
+            [
+              4,
+              15
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              13,
+              3
+            ],
+            [
+              11,
+              13
+            ],
+            [
+              1,
+              14
+            ]
+          ],
+          "maks_stanow_na_sciezce": 13,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 3,
+      "ziarno": 20262522,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        3,
+        0,
+        5,
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        0,
+        10,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        1,
+        8,
+        13,
+        15,
+        12,
+        0,
+        0,
+        14,
+        9,
+        0,
+        0,
+        10
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 10,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 12.493302799994126,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 12,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 13,
+          "sukces": true,
+          "wezly": 14,
+          "czas_s": 0.012776100018527359,
+          "dlugosc": 13,
+          "sekwencja": [
+            [
+              7,
+              0
+            ],
+            [
+              6,
+              13
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              7,
+              15
+            ]
+          ],
+          "maks_stanow_na_sciezce": 14,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 3,
+      "ziarno": 20262522,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        3,
+        0,
+        5,
+        0,
+        0,
+        0,
+        13,
+        0,
+        0,
+        0,
+        10,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        0,
+        0,
+        0,
+        1,
+        8,
+        13,
+        15,
+        12,
+        0,
+        0,
+        14,
+        9,
+        0,
+        0,
+        10
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 2517,
+          "czas_s": 1.6749817000236362,
+          "dlugosc": 10,
+          "sekwencja": [
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "maks_stanow_na_sciezce": 11,
+          "status": "OK"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 10,
+          "sukces": true,
+          "wezly": 11,
+          "czas_s": 0.01181880000513047,
+          "dlugosc": 10,
+          "sekwencja": [
+            [
+              11,
+              14
+            ],
+            [
+              12,
+              9
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              15,
+              10
+            ],
+            [
+              7,
+              15
+            ],
+            [
+              6,
+              13
+            ]
+          ],
+          "maks_stanow_na_sciezce": 11,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": true
+    },
+    {
+      "n": 15,
+      "problem": 4,
+      "ziarno": 20262523,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        15,
+        12,
+        8,
+        13,
+        4,
+        9,
+        0,
+        6,
+        11,
+        7,
+        0,
+        5,
+        3,
+        10,
+        0
+      ],
+      "cel": [
+        7,
+        1,
+        2,
+        0,
+        14,
+        15,
+        10,
+        9,
+        5,
+        6,
+        4,
+        0,
+        0,
+        0,
+        13
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 15,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 6.50164329999825,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 15,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 23,
+          "sukces": true,
+          "wezly": 24,
+          "czas_s": 0.018802199978381395,
+          "dlugosc": 23,
+          "sekwencja": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              11,
+              4
+            ],
+            [
+              14,
+              0
+            ],
+            [
+              5,
+              14
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              15,
+              13
+            ],
+            [
+              6,
+              15
+            ],
+            [
+              10,
+              6
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "maks_stanow_na_sciezce": 24,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 4,
+      "ziarno": 20262523,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        15,
+        12,
+        8,
+        13,
+        4,
+        9,
+        0,
+        6,
+        11,
+        7,
+        0,
+        5,
+        3,
+        10,
+        0
+      ],
+      "cel": [
+        7,
+        1,
+        2,
+        0,
+        14,
+        15,
+        10,
+        9,
+        5,
+        6,
+        4,
+        0,
+        0,
+        0,
+        13
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 15,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 11.262878299981821,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 18,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 15,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 32.08478259999538,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 11,
+          "status": "LIMIT_WEZLOW"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 5,
+      "ziarno": 20262524,
+      "wariant": "PODSTAWOWY",
+      "start": [
+        14,
+        3,
+        10,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        4,
+        0,
+        0,
+        14,
+        1,
+        0,
+        6,
+        0,
+        0,
+        2,
+        0,
+        0,
+        8,
+        13,
+        9
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 13,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 7.909797900007106,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 12,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 14,
+          "sukces": true,
+          "wezly": 15,
+          "czas_s": 0.007011900015641004,
+          "dlugosc": 14,
+          "sekwencja": [
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              10,
+              2
+            ],
+            [
+              12,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              13,
+              8
+            ],
+            [
+              14,
+              13
+            ],
+            [
+              4,
+              14
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              15,
+              9
+            ]
+          ],
+          "maks_stanow_na_sciezce": 15,
+          "status": "OK"
+        }
+      },
+      "rowne_dlugosci": null
+    },
+    {
+      "n": 15,
+      "problem": 5,
+      "ziarno": 20262524,
+      "wariant": "ROZSZERZONY",
+      "start": [
+        14,
+        3,
+        10,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      "cel": [
+        4,
+        0,
+        0,
+        14,
+        1,
+        0,
+        6,
+        0,
+        0,
+        2,
+        0,
+        0,
+        8,
+        13,
+        9
+      ],
+      "wyniki": {
+        "h1_podloza": {
+          "h_start": 13,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 11.580665100016631,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 14,
+          "status": "LIMIT_WEZLOW"
+        },
+        "h2_obowiazkowe_ruchy": {
+          "h_start": 13,
+          "sukces": false,
+          "wezly": 30000,
+          "czas_s": 34.84802740003215,
+          "dlugosc": null,
+          "sekwencja": null,
+          "maks_stanow_na_sciezce": 11,
+          "status": "LIMIT_WEZLOW"
+        }
+      },
+      "rowne_dlugosci": null
+    }
+  ]
+}
