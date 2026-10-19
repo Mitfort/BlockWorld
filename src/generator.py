@@ -3,11 +3,13 @@ import random
 from src.stan import StanKlockow
 from src.warianty import Warianty
 
+
 def generuj_losowy_stan(
     N: int, wariant: Warianty = Warianty.PODSTAWOWY, *, rng: random.Random | None = None
 ) -> StanKlockow:
-    """Generuje poprawny, losowy stan dla N klocków[cite: 2, 3]."""
+    """Generuje poprawny, losowy stan dla N klocków."""
     klocki = list(range(1, N + 1))
+
     generator = rng if rng is not None else random
     generator.shuffle(klocki)
 
